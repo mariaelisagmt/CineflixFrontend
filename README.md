@@ -1,4 +1,4 @@
-# CineflixFrontend
+# TODOLIST
 Plataforma de cadastro de filmes e séries que quero assistir ou já assisti. Sistema criado para a oficina de desenvolvimento web da EEP GWA
 
 # Passos
@@ -19,7 +19,7 @@ Criar componente
 ng generate component nome-do-componente
 
 Instalar o tailwind
-npm install -D tailwindcss postcss autoprefixer
+npm install -g tailwindcss
 
 Configurar o tailwind
 npx tailwindcss init

@@ -18,7 +18,7 @@ export class NovaTarefaComponent {
 
   addTarefa() {
     const tituloTarefa = this.tituloNovaTarefa.value?? '';
-
+    console.log(tituloTarefa);
     if (tituloTarefa.trim() !== '') {
       this.todoService.createTask(tituloTarefa);
       this.tituloNovaTarefa.reset();

@@ -6,7 +6,7 @@ import { TodoService } from '../../service/todo.service';
 @Component({
   selector: 'app-todo-item',
   standalone: true,
-  imports: [ReactiveFormsModule], // Importa ReactiveFormsModule para o formulário reativo
+  imports: [ReactiveFormsModule ], // Importa ReactiveFormsModule para o formulário reativo
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.css']
 })
@@ -20,7 +20,7 @@ export class TodoItemComponent implements OnInit {
 
   ngOnInit(): void {
     // Inicializa o formulário com os valores atuais do todo
-    console.log("aquiiii");
+    console.log(this.todo);
     this.todoForm = this.formBuilder.group({
       completo: [this.todo.feita], // Controla o checkbox
     });

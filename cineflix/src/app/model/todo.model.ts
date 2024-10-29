@@ -1,5 +1,5 @@
 export interface Tarefa {
     id: number;
-    tituo: string;
+    titulo: string;
     feita: boolean;
 }

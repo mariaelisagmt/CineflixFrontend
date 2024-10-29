@@ -7,7 +7,7 @@ import { Tarefa } from '../model/todo.model';
   providedIn: 'root'
 })
 export class TodoService {
-  private apiUrl = 'http://localhost:3000/tasks';  // URL da API
+  private apiUrl = 'http://localhost:3000/tarefas';  // URL da API
 
   constructor(private http: HttpClient) {}
 

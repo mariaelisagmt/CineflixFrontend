@@ -11,7 +11,7 @@
         [class.completo]="todoForm.get('completo')?.value"
         [class.incompleto]="!todoForm.get('completo')?.value"
       >
-        {{ todoForm.get('titulo')?.value }}
+        {{ todo.titulo}}
       </label>
     </form>
     <button class="todo-item_delete" (click)="deleteTodo()">

@@ -11,10 +11,12 @@
   
     <div class="todo-list_container">
       <div class="todo-list_todo">
-        <app-todo-item
-          *ngFor="let todo of filteredTodos"
-          [todo]="todo"
-        ></app-todo-item>
+        @for (todo of todos; track todo.id) {
+          <app-todo-item [todo] = "todo"></app-todo-item>
+        }
+        @empty {
+          Não há atividades.
+        }
       </div>
     </div>
   </div>  

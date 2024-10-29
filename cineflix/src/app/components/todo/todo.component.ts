@@ -25,9 +25,9 @@ export class TodoComponent implements OnInit {
   }
 
   loadTodos() {
-    console.log('xxxx');
     this.todoService.getTasks().subscribe(todos => {
       this.todos = todos;
+      console.log(this.todos);
     });
   }
 

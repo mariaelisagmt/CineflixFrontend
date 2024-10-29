@@ -9,8 +9,7 @@ import { Tarefa } from '../../model/todo.model';
   selector: 'app-todo',
   standalone: true,
   imports: [ReactiveFormsModule, NovaTarefaComponent, TodoItemComponent],
-  templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css']
+  templateUrl: './todo.component.html'
 })
 
 
@@ -27,8 +26,11 @@ export class TodoComponent implements OnInit {
   loadTodos() {
     this.todoService.getTasks().subscribe(todos => {
       this.todos = todos;
-      console.log(this.todos);
     });
+  }
+  
+  onTarefaAdicionada() {
+    this.loadTodos();
   }
 
   addTodo(newTodoTitle: string) {
@@ -54,15 +56,16 @@ export class TodoComponent implements OnInit {
     this.todoService.clearCompletedTasks();
     this.loadTodos();
   }
-    */
-
+  
+  
   toggleCompletedTasks() {
     this.showCompletedTasks = !this.showCompletedTasks;
     this.loadTodos();
     this.todos = this.filteredTodos();
   }
-
+  
   filteredTodos() {
-    return this.showCompletedTasks ? this.todos : this.todos.filter(todo => !todo.feita);
+    return this.showCompletedTasks ? this.todos : this.todos.filter(todo => !todo.completo);
   }
+  */
 }

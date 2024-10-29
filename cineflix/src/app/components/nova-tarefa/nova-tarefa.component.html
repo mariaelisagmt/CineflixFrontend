@@ -1,15 +1,36 @@
-<div class="new-task">
-    <div class="new-task_input-container">
-      <label class="new-task_label" for="new-task">Vamos lá!</label>
-      <input
-        id="new-task"
-        class="new-task_input"
-        type="text"
-        [formControl]="tituloNovaTarefa"
-        placeholder="Descreva sua tarefa"
-      />
-    </div>
-    <button class="new-task_button" (click)="addTarefa()">
-      <svg height="35px" width="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-    </button>
+<div class="flex items-end gap-4 justify-center mt-6 max-w-8xl w-max">
+  <div class="flex flex-col justify-center w-full">
+    <label for="new-task" class="text-sm mb-1 indent-2" >Adicione novas atividades!</label>
+    <input
+      id="new-task"
+      type="text"
+      [formControl]="tituloNovaTarefa"
+      placeholder="Descreva sua tarefa"
+      class="bg-white border border-gray-200 shadow-md rounded-lg h-10 indent-6 w-full focus:outline-none focus:ring-2 focus:ring-blue-300"
+    />
+  </div>
+  <button
+    class="bg-green-600 text-white rounded-lg shadow-md p-2 cursor-pointer hover:bg-green-700 transition-all"
+    (click)="addTarefa()"
+  >
+    <svg
+      height="35px"
+      width="35px"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier">
+        <path
+          d="M6 12H18M12 6V18"
+          stroke="#000000"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </g>
+    </svg>
+  </button>
 </div>

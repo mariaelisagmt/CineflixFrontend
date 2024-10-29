@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TodoService } from '../../service/todo.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
@@ -7,21 +7,23 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   selector: 'app-nova-tarefa',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './nova-tarefa.component.html',
-  styleUrls: ['./nova-tarefa.component.css']
+  templateUrl: './nova-tarefa.component.html'
 })
 
 export class NovaTarefaComponent {
   tituloNovaTarefa = new FormControl('');
 
+  @Output() tarefaAdicionada = new EventEmitter<void>();
+
   constructor(private todoService: TodoService) { }
 
   addTarefa() {
-    const tituloTarefa = this.tituloNovaTarefa.value?? '';
-    console.log(tituloTarefa);
-    if (tituloTarefa.trim() !== '') {
-      this.todoService.createTask(tituloTarefa);
-      this.tituloNovaTarefa.reset();
+    const titulo = this.tituloNovaTarefa.value?.trim();
+    if (titulo) {
+      this.todoService.createTask(titulo).subscribe(() => {
+        this.tarefaAdicionada.emit();
+        this.tituloNovaTarefa.reset();
+      });
     }
   }
 }

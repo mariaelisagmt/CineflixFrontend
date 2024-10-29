@@ -1,0 +1,29 @@
+<div class="flex flex-col items-center justify-center w-full">
+  <div class="w-full">
+    <app-nova-tarefa (tarefaAdicionada)="onTarefaAdicionada()"></app-nova-tarefa>
+  </div>
+<!--
+  <div class="flex flex-wrap items-center justify-end gap-6 mt-2 w-full pr-20">
+    <button 
+      class="w-52 bg-transparent border border-gray-800 text-gray-800 font-bold shadow-sm 
+             px-2 py-1 rounded cursor-pointer hover:bg-gray-100">
+      {{ showCompletedTasks ? 'HIDE COMPLETED TASKS' : 'SHOW COMPLETED TASKS' }}
+    </button>
+    <button (click)="clearCompletedTasks()">CLEAR COMPLETED TASKS</button>
+    <button (click)="clearAll()">CLEAR ALL</button>
+  </div>
+-->
+
+  <div 
+    class="bg-white border border-gray-200 rounded-2xl shadow-lg mt-2 p-10 max-w-4xl 
+           w-4/5 h-[60vh] overflow-y-auto">
+    <div class="flex flex-col gap-2">
+      @for (todo of todos; track todo.id) {
+        <app-todo-item [todo] = "todo"></app-todo-item>
+      }
+      @empty {
+        Não há atividades.
+      }
+    </div>
+  </div>
+</div>

@@ -28,3 +28,7 @@ Alterar o arquivo principal
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+Criar o serviço 
+ng g service todo

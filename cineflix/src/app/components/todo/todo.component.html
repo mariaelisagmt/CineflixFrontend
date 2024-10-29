@@ -1,0 +1,20 @@
+<div class="todo-container">
+    <div class="todo-form">
+      <app-nova-tarefa></app-nova-tarefa>
+    </div>
+  
+    <div class="todo-buttons">
+      <button class="toggle-button" (click)="toggleCompletedTasks()">
+        {{ showCompletedTasks ? 'HIDE COMPLETED TASKS' : 'SHOW COMPLETED TASKS' }}
+      </button>
+    </div>
+  
+    <div class="todo-list_container">
+      <div class="todo-list_todo">
+        <app-todo-item
+          *ngFor="let todo of filteredTodos"
+          [todo]="todo"
+        ></app-todo-item>
+      </div>
+    </div>
+  </div>  

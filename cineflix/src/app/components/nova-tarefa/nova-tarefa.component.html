@@ -1,0 +1,15 @@
+<div class="new-task">
+    <div class="new-task_input-container">
+      <label class="new-task_label" for="new-task">Vamos lá!</label>
+      <input
+        id="new-task"
+        class="new-task_input"
+        type="text"
+        [formControl]="tituloNovaTarefa"
+        placeholder="Descreva sua tarefa"
+      />
+    </div>
+    <button class="new-task_button" (click)="addTarefa()">
+      <i class="fas fa-plus"></i>
+    </button>
+</div>

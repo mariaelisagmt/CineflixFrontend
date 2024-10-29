@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './menu/menu.component';
-import { RodapeComponent } from './rodape/rodape.component';
+import { HomeComponent } from './components/estrutura/home/home.component';
+import { MenuComponent } from './components/estrutura/menu/menu.component';
+import { RodapeComponent } from './components/estrutura/rodape/rodape.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,5 @@ import { RodapeComponent } from './rodape/rodape.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'cineflix';
+  title = 'Lista de Tarefas';
 }

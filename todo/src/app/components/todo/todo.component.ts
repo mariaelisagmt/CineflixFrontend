@@ -12,7 +12,6 @@ import { Tarefa } from '../../model/todo.model';
   templateUrl: './todo.component.html'
 })
 
-
 export class TodoComponent implements OnInit {
   todos: Tarefa[] = [];
   showCompletedTasks: boolean = true;
@@ -44,28 +43,4 @@ export class TodoComponent implements OnInit {
   deleteTodo(todoId: number) {
     this.todoService.deleteTask(todoId);
   }
-/*
-  clearAll() {
-    if (this.todos.length > 0 && confirm('Are you sure you want to clear all tasks?')) {
-      this.todoService.clearAll();
-      this.loadTodos();
-    }
-  }
-
-  clearCompletedTasks() {
-    this.todoService.clearCompletedTasks();
-    this.loadTodos();
-  }
-  
-  
-  toggleCompletedTasks() {
-    this.showCompletedTasks = !this.showCompletedTasks;
-    this.loadTodos();
-    this.todos = this.filteredTodos();
-  }
-  
-  filteredTodos() {
-    return this.showCompletedTasks ? this.todos : this.todos.filter(todo => !todo.completo);
-  }
-  */
 }

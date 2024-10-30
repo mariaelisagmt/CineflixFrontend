@@ -7,10 +7,10 @@ Instalar o angular cliente
 npm install -g @angular/cli
 
 Criar o projeto
-ng new cineflix
+ng new todo
 
 Movimentar entre pastas
-cd cineflix
+cd todo
 
 Executar o projeto
 ng serve
@@ -32,3 +32,6 @@ Alterar o arquivo principal
 
 Criar o serviço 
 ng g service todo
+
+Quando clonar utilize
+npm install 
